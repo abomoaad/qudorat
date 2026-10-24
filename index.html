@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>محاكي اختبار القدرات – أ/ عبدالله المرواني – ثانوية أنس بن النضر</title>
+<meta name="author" content="الأستاذ عبدالله المرواني – ثانوية أنس بن النضر">
+<meta name="copyright" content="جميع الحقوق محفوظة © الأستاذ عبدالله المرواني">
+<!-- محاكي اختبار القدرات: إعداد الأستاذ عبدالله المرواني. جميع الحقوق محفوظة، ويُمنع النسخ أو النشر أو النسبة إلى غيره دون إذنه. -->
+<style>
+:root{--bg:#f1f6f3;--sf:#fff;--ink:#17261d;--mu:#56685d;--ln:#d5e3da;--ac:#0b6b3a;--ai:#fff;--as:#e0f2e8;--ok:#2e9e5e;--oks:#d4efdf;--bd:#c0392b;--bds:#fbe3e0;--fl:#b7791f;--fls:#fbefd5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1712;--sf:#16221b;--ink:#e4efe8;--mu:#9bb0a3;--ln:#2a3d32;--ac:#4cc27f;--ai:#08160e;--as:#1b3326;--ok:#5cc58a;--oks:#173626;--bd:#ee8277;--bds:#40201d;--fl:#e3a74a;--fls:#3a2e17}}
+:root[data-theme="dark"]{--bg:#0e1712;--sf:#16221b;--ink:#e4efe8;--mu:#9bb0a3;--ln:#2a3d32;--ac:#4cc27f;--ai:#08160e;--as:#1b3326;--ok:#5cc58a;--oks:#173626;--bd:#ee8277;--bds:#40201d;--fl:#e3a74a;--fls:#3a2e17}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 12% 0%,var(--as),transparent 45%),radial-gradient(circle at 92% 100%,var(--oks),transparent 42%),var(--bg);background-attachment:fixed;color:var(--ink);font:16px/1.7 Tahoma,"Segoe UI",Arial,sans-serif;min-height:100vh}
+.w{max-width:760px;margin:0 auto;padding:16px}
+.c{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:20px;margin-bottom:14px}
+h1{font-size:26px;margin:0 0 8px}h2{font-size:19px;margin:0 0 10px}
+.mu{color:var(--mu)}
+.b{background:var(--ac);color:var(--ai);border:0;border-radius:10px;padding:10px 20px;font:inherit;cursor:pointer}
+.b.g{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+.b:disabled{opacity:.4;cursor:default}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.tm{font-weight:700;font-size:20px;font-variant-numeric:tabular-nums;color:var(--ac)}
+.bar{height:6px;background:var(--ln);border-radius:4px;overflow:hidden;margin:6px 0 12px}
+.bar i{display:block;height:100%;background:var(--ac)}
+.q{font-size:18px;margin:8px 0 14px}
+.psg{background:var(--as);border-radius:10px;padding:12px;margin-bottom:10px}
+.o{display:block;width:100%;text-align:start;background:var(--sf);color:var(--ink);border:1.5px solid var(--ln);border-radius:10px;padding:11px 14px;margin-bottom:8px;font:inherit;cursor:pointer}
+.o.s{border-color:var(--ac);background:var(--as)}
+.o.ok{border-color:var(--ok);background:var(--oks)}.o.no{border-color:var(--bd);background:var(--bds)}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.nav button{width:36px;height:36px;border-radius:8px;border:1.5px solid var(--ln);background:var(--sf);color:var(--ink);font:inherit;cursor:pointer}
+.nav .a{background:var(--as);border-color:var(--ac)}.nav .cur{outline:2px solid var(--ac)}.nav .f{border-color:var(--fl);background:var(--fls)}
+.row{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:12px}
+.sc{font-size:46px;font-weight:700;color:var(--ac);text-align:center;line-height:1.2}
+.tag{display:inline-block;font-size:13px;padding:1px 10px;border-radius:99px;background:var(--as);color:var(--ac);margin-inline-start:4px}
+.tag.d{background:var(--fls);color:var(--fl)}
+.ex{background:var(--as);border-radius:10px;padding:10px 12px;margin-top:8px;font-size:15px}
+textarea{width:100%;height:170px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--ink);padding:10px;font:13px/1.6 monospace;direction:rtl}
+.hd{background:linear-gradient(90deg,var(--ac),var(--ok));color:var(--ai);text-align:center;padding:10px 12px;font-size:14px;font-weight:700;border-bottom:3px solid #c9a227}
+.c{border-radius:22px;padding:24px;box-shadow:0 6px 24px rgba(11,107,58,.12);border-color:transparent}
+.b{border-radius:99px;padding:11px 26px;font-weight:700;box-shadow:0 3px 10px rgba(11,107,58,.28);transition:transform .15s}
+.b:hover:not(:disabled){transform:translateY(-2px)}
+.b.g{box-shadow:none}
+.o{border-radius:14px;padding:13px 16px;transition:all .15s}
+.o:hover{border-color:var(--ac);transform:translateX(-3px)}
+.o.s{font-weight:700;box-shadow:0 2px 8px rgba(11,107,58,.2)}
+.bar{height:9px;border-radius:9px}
+.bar i{background:linear-gradient(90deg,var(--ac),var(--ok));border-radius:9px;transition:width .4s}
+.nav button{border-radius:50%}
+.sc{font-size:60px}
+.enc{background:linear-gradient(90deg,var(--as),var(--oks));border-radius:14px;padding:10px 14px;margin:10px 0;text-align:center;font-weight:700;font-size:15px}
+.ft{text-align:center;color:var(--mu);font-size:13px;padding:6px 16px 24px}
+.bgk{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.bgk::before{content:"";position:absolute;inset:0;opacity:.13;background-size:170px 160px;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='160' viewBox='0 0 170 160'><g fill='none' stroke='%230b6b3a' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'><path d='M16 36q10-6 20 0q10-6 20 0v22q-10-6-20 0q-10-6-20 0z M36 36v22'/><path d='M110 24l4 9 10 1-7.5 6.5 2.5 10-9-5.5-9 5.5 2.5-10L96 34l10-1z'/><path d='M100 112l24-24 6 6-24 24-9 3z'/><path d='M20 118l24-10 24 10-24 10z M32 123v10q12 6 24 0v-10'/></g></svg>")}
+.bgk svg{position:absolute;bottom:0;left:0;width:100%;height:34vh;max-height:300px;opacity:.2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bgk::before{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='160' viewBox='0 0 170 160'><g fill='none' stroke='%234cc27f' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'><path d='M16 36q10-6 20 0q10-6 20 0v22q-10-6-20 0q-10-6-20 0z M36 36v22'/><path d='M110 24l4 9 10 1-7.5 6.5 2.5 10-9-5.5-9 5.5 2.5-10L96 34l10-1z'/><path d='M100 112l24-24 6 6-24 24-9 3z'/><path d='M20 118l24-10 24 10-24 10z M32 123v10q12 6 24 0v-10'/></g></svg>")}}
+:root[data-theme="dark"] .bgk::before{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='160' viewBox='0 0 170 160'><g fill='none' stroke='%234cc27f' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'><path d='M16 36q10-6 20 0q10-6 20 0v22q-10-6-20 0q-10-6-20 0z M36 36v22'/><path d='M110 24l4 9 10 1-7.5 6.5 2.5 10-9-5.5-9 5.5 2.5-10L96 34l10-1z'/><path d='M100 112l24-24 6 6-24 24-9 3z'/><path d='M20 118l24-10 24 10-24 10z M32 123v10q12 6 24 0v-10'/></g></svg>")}
+.c{background:color-mix(in srgb,var(--sf) 92%,transparent);backdrop-filter:blur(3px)}
+.ft{padding-bottom:140px}
+body::after{content:"© عبدالله المرواني · ثانوية أنس بن النضر";position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(28px,8vw,64px);font-weight:700;color:var(--ink);opacity:.045;transform:rotate(-25deg);pointer-events:none;z-index:5;white-space:nowrap}
+[hidden]{display:none!important}
+</style></head><body><div class="bgk"><svg viewBox="0 0 600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 200V150L110 70L190 130L270 40L380 140L470 90L600 160V200Z" style="fill:var(--ac)"/><path d="M0 200V175L90 130L170 170L300 100L420 175L520 130L600 180V200Z" style="fill:var(--ok)"/><path d="M270 40V4" style="stroke:#c9a227;stroke-width:3"/><path d="M270 4l32 9-32 9z" style="fill:#c9a227"/></svg></div><div class="hd">محاكي اختبار القدرات · إعداد الأستاذ عبدالله المرواني · ثانوية أنس بن النضر · جميع الحقوق محفوظة</div><div class="w" id="app"></div><div class="ft">© جميع الحقوق محفوظة للأستاذ عبدالله المرواني – ثانوية أنس بن النضر. يُمنع النسخ أو إعادة النشر أو النسبة إلى غيره دون إذنه.</div>
+<script>
+var P1="تُعد القراءة اليومية عادة تنمّي الخيال وتوسّع المفردات، كما تساعد على التركيز. غير أن فائدتها تتضاعف حين يتأمل القارئ ما قرأه ويناقشه مع غيره.",
+P2="اعتمد سكان الواحات قديمًا على النخيل في غذائهم وبناء بيوتهم وصناعة أدواتهم، حتى عُدّ النخيل مصدر الحياة. ومع قلة الأمطار حرصوا على تنظيم الري بينهم بعدالة؛ إذ كان لكل مزارع وقت محدد لسقي أرضه.";
+/* الخيار الأول هو الصحيح، ويُخلط الترتيب عند البدء */
+var Q=[
+["الحساب","بسيط","ما قيمة 25% من 80؟",["20","15","25","40"],"80 × 0.25 = 20"],
+["الحساب","بسيط","ناتج: 3/5 + 1/5 =",["4/5","4/10","3/25","1"],"المقامات متساوية فنجمع البسطين: 4/5"],
+["الحساب","متوسط","سلعة سعرها 200 ريال خُفّض سعرها 20% ثم زِيد 10% على السعر الجديد. ما السعر النهائي؟",["176","180","220","160"],"بعد التخفيض 160، ثم 160 × 1.1 = 176"],
+["الحساب","صعب","يملأ صنبور خزانًا في 6 ساعات، وآخر في 3 ساعات. كم ساعة يلزم لملئه إذا فُتح الصنبوران معًا؟",["2","4.5","3","1.5"],"المعدل معًا = 1/6 + 1/3 = 1/2، إذن ساعتان"],
+["الجبر","بسيط","إذا كان 2س = 14، فما قيمة س؟",["7","12","28","5"],"س = 14 ÷ 2 = 7"],
+["الجبر","بسيط","إذا كان س − 3 = 10، فما قيمة س + 3؟",["16","13","10","7"],"س = 13، إذن س + 3 = 16"],
+["الجبر","متوسط","إذا كان 3س + 2 = 2س + 9، فما قيمة س؟",["7","5","9","11"],"3س − 2س = 9 − 2، إذن س = 7"],
+["الجبر","صعب","مجموع عددين 30 وفرقهما 6. ما العدد الأكبر؟",["18","12","16","24"],"الأكبر = (30 + 6) ÷ 2 = 18"],
+["الهندسة","بسيط","ما مساحة مربع طول ضلعه 7 سم؟",["49","28","14","42"],"المساحة = 7 × 7 = 49"],
+["الهندسة","بسيط","مجموع زوايا المثلث الداخلية يساوي:",["180°","90°","270°","360°"],"خاصية ثابتة لكل مثلث: 180°"],
+["الهندسة","متوسط","دائرة نصف قطرها 7 سم. ما محيطها (π = 22/7)؟",["44","22","154","49"],"المحيط = 2 × 22/7 × 7 = 44"],
+["الهندسة","صعب","مثلث قائم الزاوية طولا ضلعيه القائمين 6 و8. ما طول الوتر؟",["10","12","14","9"],"36 + 64 = 100، والجذر = 10"],
+["الإحصاء","بسيط","ما وسيط الأعداد: 3، 9، 5، 7، 1؟",["5","3","7","9"],"الترتيب: 1، 3، 5، 7، 9 والأوسط 5"],
+["الإحصاء","بسيط","ما منوال الأعداد: 2، 4، 4، 5، 6، 4، 2؟",["4","2","5","6"],"المنوال هو الأكثر تكرارًا، وهو 4 (ثلاث مرات)"],
+["الإحصاء","متوسط","متوسط خمسة أعداد 12. أُضيف عدد سادس فصار المتوسط 14. ما العدد المضاف؟",["24","20","26","28"],"المجموع الجديد 84 والقديم 60، والفرق 24"],
+["الإحصاء","صعب","في صندوق 3 كرات حمراء و2 زرقاء. سُحبت كرتان دون إرجاع. ما احتمال أن تكونا حمراوين؟",["3/10","9/25","3/5","1/2"],"3/5 × 2/4 = 3/10"],
+["التناظر اللفظي","بسيط","ماء : عطش ::",["طعام : جوع","طعام : مطبخ","طعام : ملح","طعام : أكل"],"الماء يزيل العطش، كما يزيل الطعام الجوع"],
+["التناظر اللفظي","بسيط","عين : رؤية ::",["أذن : سمع","أذن : صوت","أذن : رأس","أذن : قرط"],"العين أداة الرؤية، والأذن أداة السمع"],
+["التناظر اللفظي","متوسط","نجمة : مجرّة ::",["شجرة : غابة","شجرة : ظل","شجرة : ثمر","شجرة : جذع"],"علاقة جزء بالكل: النجمة جزء من المجرة، والشجرة جزء من الغابة"],
+["التناظر اللفظي","صعب","ظمأ : ارتواء ::",["جهل : علم","جهل : كتاب","جهل : مدرسة","جهل : غباء"],"الارتواء يُنهي الظمأ، والعلم يُنهي الجهل"],
+["إكمال الجمل","بسيط","الوقت كالسيف إن لم تقطعه ...",["قطعك","أضاعك","ربحك","زادك"],"من الحكم المشهورة"],
+["إكمال الجمل","بسيط","المعلم الناجح ... طلابه إلى طريق العلم.",["يُرشد","يُهمل","يُبعد","يُخيف"],"السياق يدل على الإرشاد والتوجيه"],
+["إكمال الجمل","متوسط","رغم صعوبة الامتحان، ... الطالب بالهدوء فتجاوزه.",["تحلّى","تذمّر","تهرّب","ارتبك"],"التحلّي بالهدوء يناسب النجاح في تجاوز الصعوبة"],
+["إكمال الجمل","صعب","على الرغم من ... الجهد المبذول، فإن النتائج جاءت ... للتوقعات.",["كثرة – مخيبة","قلة – مطابقة","سهولة – ممتازة","ضعف – مبهجة"],"«على الرغم من» تدل على التضاد بين كثرة الجهد وخيبة النتائج"],
+["المفردة الشاذة","بسيط","اختر الكلمة المختلفة:",["حمامة","أسد","نمر","ذئب"],"الحمامة طائر، والبقية حيوانات مفترسة"],
+["المفردة الشاذة","بسيط","اختر الكلمة المختلفة:",["صباح","شمال","جنوب","شرق"],"الصباح وقت، والبقية جهات"],
+["المفردة الشاذة","متوسط","اختر الكلمة المختلفة:",["مقص","كتاب","مجلة","جريدة"],"المقص أداة، والبقية مواد للقراءة"],
+["المفردة الشاذة","صعب","اختر الكلمة المختلفة:",["شك","ثقة","يقين","تأكد"],"الشك ضد الثلاث الأخرى"],
+["استيعاب المقروء","بسيط","ما الفائدة التي لم يذكرها النص؟",["تقوية العضلات","توسيع المفردات","تنمية الخيال","المساعدة على التركيز"],"النص لم يذكر العضلات",P1],
+["استيعاب المقروء","متوسط","متى تتضاعف فائدة القراءة بحسب النص؟",["عند التأمل والمناقشة","عند القراءة بسرعة","عند القراءة ليلًا","عند حفظ النص"],"ذكر النص ذلك في جملته الأخيرة",P1],
+["استيعاب المقروء","متوسط","ما الفكرة الرئيسة للنص؟",["أهمية النخيل وتنظيم الري في حياة أهل الواحات","تاريخ بناء البيوت قديمًا","كثرة الأمطار في الواحات","صناعة الأدوات الحديثة"],"النص يدور حول النخيل وتنظيم الري",P2],
+["استيعاب المقروء","صعب","يُفهم من النص أن تنظيم الري كان بسبب:",["قلة الأمطار والرغبة في العدالة","كثرة الأمطار","المنافسة بين المزارعين","غياب النخيل"],"قلة الأمطار دفعتهم لتنظيم الري بعدالة",P2]
+].map(function(r){return{s:r[0],d:r[1],q:r[2],o:r[3],c:r[3][0],e:r[4],p:r[5],k:r[0]==="التناظر اللفظي"||r[0]==="إكمال الجمل"||r[0]==="المفردة الشاذة"||r[0]==="استيعاب المقروء"?"لفظي":"كمي"}});
+var T=Q.length*80,left,tick,ans,flg,cur,app=document.getElementById("app");
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function fmt(s){s=Math.max(0,s);return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function home(){app.innerHTML='<div class="c"><div style="font-size:46px;text-align:center">🎓</div><div style="text-align:center;color:var(--fl);font-weight:700">ثانوية أنس بن النضر</div><h1 style="text-align:center">محاكي اختبار القدرات</h1><div class="enc">أهلًا بك يا بطل! 🌟 كل محاولة تقرّبك من التميّز، فثق بنفسك وانطلق بإذن الله.</div><p class="mu">'+Q.length+' سؤالًا: كمي (الحساب، الجبر، الهندسة، الإحصاء) ولفظي (التناظر، إكمال الجمل، المفردة الشاذة، استيعاب المقروء)، بواقع 4 أسئلة لكل قسم. يُكتب مستوى صعوبة كل سؤال قبله.</p><p>المدة: '+Math.round(T/60)+' دقيقة. في النهاية تحصل على تقرير بنتيجتك تحتفظ به لتسلّمه لمعلمك عند الطلب.</p><div class="enc" style="text-align:start">❓ سؤال اختياري: هل أنت من طلاب ثانوية أنس بن النضر؟</div><button class="o" id="aY" onclick="aff(1)">نعم، أنا من طلاب المدرسة</button><button class="o" id="aN" onclick="aff(0)">لا، لا أنتمي للمدرسة وأريد التدرب فقط</button><div style="height:12px"></div><button class="b" onclick="start()">ابدأ الاختبار</button></div>'}
+function start(){Q.forEach(function(x){x.o=sh(x.o);x.a=x.o.indexOf(x.c)});ans=[];flg=[];cur=0;left=T;clearInterval(tick);tick=setInterval(function(){left--;var e=document.getElementById("tm");if(e)e.textContent=fmt(left);if(left<=0)finish()},1000);show()}
+function show(){var x=Q[cur],h='<div class="c"><div class="top"><span><span class="tag">'+x.s+'</span><span class="tag d">'+x.d+'</span></span><span class="tm" id="tm">'+fmt(left)+'</span></div><div class="mu" style="font-size:13px;margin-top:6px">سؤال '+(cur+1)+' من '+Q.length+'</div><div class="bar"><i style="width:'+((cur+1)/Q.length*100)+'%"></i></div><div class="enc">'+msg()+'</div>';
+if(x.p)h+='<div class="psg">'+x.p+'</div>';
+h+='<div class="q">'+x.q+'</div>';
+x.o.forEach(function(t,i){h+='<button class="o'+(ans[cur]===i?' s':'')+'" onclick="pick('+i+')">'+t+'</button>'});
+h+='<div class="row"><button class="b g" onclick="flag()">'+(flg[cur]?'إلغاء التعليم':'علّم للمراجعة')+'</button><span><button class="b g" onclick="go(-1)"'+(cur?'':' disabled')+'>السابق</button> '+(cur<Q.length-1?'<button class="b" onclick="go(1)">التالي</button>':'<button class="b" onclick="finish()">إنهاء</button>')+'</span></div><div class="nav">';
+Q.forEach(function(_,i){h+='<button class="'+(ans[i]!==undefined?'a ':'')+(flg[i]?'f ':'')+(i==cur?'cur':'')+'" onclick="cur='+i+';show()">'+(i+1)+'</button>'});
+app.innerHTML=h+'</div><div class="row"><button class="b g" onclick="if(confirm(\'إنهاء الاختبار وعرض النتيجة؟\'))finish()">إنهاء الاختبار</button></div></div>'}
+var AF=-1;
+function dl(){var t=document.getElementById("rp"),m=document.getElementById("dm"),no="التنزيل غير متاح هنا، استخدم زر نسخ التقرير بالأسفل.";
+if(!window.claude||!claude.use){try{var b=new Blob(["\ufeff"+t.value],{type:"text/plain;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="نتيجة-محاكي-القدرات.txt";document.body.appendChild(a);a.click();a.remove();m.textContent="تم تنزيل الملف ✅"}catch(e){m.textContent=no}return}
+claude.use("downloads").then(function(d){if(!d){m.textContent=no;return}
+return d.save({filename:"نتيجة-محاكي-القدرات.txt",data:"\ufeff"+t.value}).then(function(){m.textContent="تم حفظ الملف ✅"},function(e){m.textContent=e&&e.code==="declined"?"لم يُحفظ الملف.":no})},function(){m.textContent=no})}
+function aff(v){AF=(AF===v?-1:v);["aY","aN"].forEach(function(id,i){var e=document.getElementById(id);if(e)e.className="o"+(AF===(1-i)?" s":"")})}
+function affTxt(){return AF===1?"من طلاب ثانوية أنس بن النضر":AF===0?"ليس من طلاب المدرسة (يتدرب فقط)":"لم يحدد"}
+function intro(){app.innerHTML='<div class="c" style="text-align:center"><div style="font-size:46px">📚</div><div style="color:var(--fl);font-weight:700">ثانوية أنس بن النضر</div><h1>محاكي اختبار القدرات</h1><p class="mu" style="margin:0">تدريب ذكي يقرّبك من هدفك</p></div>'+
+'<div class="c"><h2>🎯 عن هذا العمل</h2><p style="margin:0">محاكي إلكتروني مجاني يحاكي أجواء اختبار القدرات العامة، ويضم '+Q.length+' سؤالًا موزعة على ثمانية أقسام: أربعة كمية (الحساب، الجبر، الهندسة، الإحصاء) وأربعة لفظية (التناظر، إكمال الجمل، المفردة الشاذة، استيعاب المقروء). لكل سؤال مستوى صعوبة واضح، وفي النهاية تحصل على تقرير يكشف نقاط قوتك وما يحتاج إلى تدريب.</p></div>'+
+'<div class="c"><h2>💌 رسالة إلى طلابنا الأعزاء</h2><p style="margin:0">أبناءنا الطلاب، النجاح لا يأتي صدفة، بل يُصنع بالمثابرة والتدريب المنتظم. أعددنا لكم هذا العمل ليكون رفيقًا لكم في رحلتكم نحو التميّز، فلا تخشوا الخطأ، فهو أول خطوات التعلّم. ثقوا بقدراتكم، واجتهدوا، واستعينوا بالله، وسترون ثمرة جهدكم بإذن الله. 🌟</p></div>'+
+'<div class="c"><h2>🧭 كيف تستفيد من المحاكي؟</h2><ol style="padding-inline-start:22px;margin:0"><li>اختر مكانًا هادئًا وخصص نحو 45 دقيقة دون مقاطعة.</li><li>أجب بجدية كأنه اختبار حقيقي، ولا تستعن بأحد أو بآلة حاسبة.</li><li>علّم الأسئلة التي ترددت فيها لتعود إليها قبل الإنهاء.</li><li>بعد الانتهاء راجع كل سؤال مع شرحه، وركّز على أخطائك.</li><li>احفظ تقريرك بعد الانتهاء، وسيطلب منك معلمك لاحقًا تسليمه ليُحلَّل أداؤك.</li><li>أعد المحاولة بعد المراجعة، فخيارات الإجابات تتبدّل كل مرة، وقارن تقدمك.</li></ol></div>'+
+'<div class="c"><h2>🚀 هذه بداية الرحلة فقط</h2><p style="margin:0">استفادتك من هذا المحاكي خطوة أولى، وستتبعه بإذن الله <b>محاكيات قادمة</b> تعزّز قوتك في القدرات وترفع مستواك قسمًا بعد قسم. فاستفد من هذه التجربة كاملة، وحلّل أخطاءك، وابنِ عليها، وترقّب الجديد القادم الذي نُعدّه لك لتصل إلى أعلى الدرجات. 🏆</p></div>'+
+'<div class="row" style="justify-content:center"><button class="b" onclick="home()">التالي ← ابدأ رحلتك</button></div>'+
+'<div class="c" style="margin-top:14px;text-align:center;font-size:clamp(11px,3.3vw,16px);white-space:nowrap;padding:20px 6px"><h2>إعداد وإشراف</h2><div>👨‍🏫 <b>الأستاذ عبدالله المرواني</b></div><div>🏫 مدير المدرسة: <b>الأستاذ ياسر العوفي</b></div><div>🤝 مشرف دعم التميز المدرسي: <b>الأستاذ ماجد الأحمدي</b></div></div>';window.scrollTo(0,0)}
+var E=["أحسنت، استمر بنفس الحماس! 🌟","ثقتك بنفسك أول طريق النجاح 💪","خطوة بعد خطوة وستصل إلى هدفك 🎯","كل سؤال تتدرب عليه يقرّبك من الإتقان 📚","رائع! إجابتك تدل على تركيز عالٍ ✨","لا تستعجل، فكّر بهدوء وستجد الحل 🌿","أنت أقوى مما تظن، واصل! 🚀","ما شاء الله، تقدّم جميل 👏"];
+function msg(){if(cur==Math.floor(Q.length/2))return"وصلت إلى منتصف الطريق، أنت بطل! 🏅";if(cur==Q.length-1)return"السؤال الأخير! اختم بقوة، أنت قريب من النجاح 🏁";return ans[cur]===undefined?"خذ نفسًا عميقًا وفكّر بهدوء، أنت تستطيع 🌟":E[cur%E.length]}
+function pick(i){ans[cur]=i;show()}function flag(){flg[cur]=!flg[cur];show()}function go(d){cur+=d;show()}
+function finish(){clearInterval(tick);var used=T-Math.max(left,0),ok=0,S={},D={},L=[];
+Q.forEach(function(x,i){var r=ans[i]===x.a;if(r)ok++;S[x.s]=S[x.s]||[0,0,x.k];S[x.s][1]++;if(r)S[x.s][0]++;D[x.d]=D[x.d]||[0,0];D[x.d][1]++;if(r)D[x.d][0]++;
+L.push((i+1)+") ["+x.k+" - "+x.s+" - "+x.d+"] "+(ans[i]===undefined?"لم يُجب":(r?"صح":"خطأ — اختار: "+x.o[ans[i]]+" | الصحيح: "+x.c))+(flg[i]?" (عُلّم للمراجعة)":""))});
+var p=Math.round(ok/Q.length*100),h='<div class="c"><h2>النتيجة</h2><div class="sc">'+p+'%</div><div class="enc">'+(p>=80?"ما شاء الله! أداء ممتاز، واصل التألق 🏆":p>=60?"أداء جيد جدًا! بقليل من التدريب ستصل إلى القمة 🌟":p>=40?"بداية طيبة، والتدريب المستمر سيصنع الفرق 💪":"لا تحزن، كل متميّز بدأ من هنا. حلّل أخطاءك وعاود المحاولة 🌱")+'</div><p class="mu" style="text-align:center">'+ok+' صحيحة من '+Q.length+' · الزمن المستغرق '+fmt(used)+'</p><h2>حسب القسم</h2>';
+var rep="تقرير محاكي القدرات – إعداد الأستاذ عبدالله المرواني – ثانوية أنس بن النضر (جميع الحقوق محفوظة)\nالانتماء: "+affTxt()+"\nالنتيجة: "+ok+"/"+Q.length+" ("+p+"%) | الزمن: "+fmt(used)+" من "+fmt(T)+"\n\nحسب القسم:\n";
+for(var k in S){h+='<p style="margin:6px 0 0">'+k+' ('+S[k][2]+'): '+S[k][0]+' من '+S[k][1]+'</p><div class="bar"><i style="width:'+(S[k][0]/S[k][1]*100)+'%"></i></div>';rep+="- "+k+" ("+S[k][2]+"): "+S[k][0]+"/"+S[k][1]+"\n"}
+h+='<h2 style="margin-top:14px">حسب الصعوبة</h2>';rep+="\nحسب الصعوبة:\n";
+["بسيط","متوسط","صعب"].forEach(function(k){h+='<p style="margin:4px 0">'+k+': '+D[k][0]+' من '+D[k][1]+'</p>';rep+="- "+k+": "+D[k][0]+"/"+D[k][1]+"\n"});
+rep+="\nتفصيل الأسئلة:\n"+L.join("\n")+"\n\nأرجو تحليل أدائي وتحديد نقاط الضعف وخطة تدريب.\n\n© المحاكي من إعداد الأستاذ عبدالله المرواني، ثانوية أنس بن النضر، جميع الحقوق محفوظة.";
+h+='</div><div class="c"><h2>📄 تقرير نتيجتك</h2><p class="mu">احفظ تقريرك كملف أو انسخه، وسيطلب منك معلمك لاحقًا تسليمه.</p><button class="b" onclick="dl()">⬇️ تنزيل ملف التقرير</button><p id="dm" class="mu" style="margin:6px 0 12px"></p><textarea id="rp" readonly onclick="this.select()"></textarea><div class="row"><button class="b" onclick="cp()">نسخ التقرير</button><button class="b g" onclick="start()">إعادة الاختبار</button></div><p id="cm" class="mu"></p></div><div class="c"><h2>مراجعة الإجابات</h2>';
+Q.forEach(function(x,i){h+='<div style="margin-bottom:18px"><span class="tag">'+x.s+'</span><span class="tag d">'+x.d+'</span>'+(x.p?'<div class="psg" style="margin-top:8px">'+x.p+'</div>':'')+'<div class="q">'+(i+1)+'. '+x.q+'</div>';
+x.o.forEach(function(t,j){h+='<div class="o '+(j===x.a?'ok':(j===ans[i]?'no':''))+'">'+t+'</div>'});
+h+='<div class="ex">'+(ans[i]===undefined?'لم تُجب. ':'')+x.e+'</div></div>'});
+app.innerHTML=h+'</div>';document.getElementById("rp").value=rep;window.scrollTo(0,0)}
+function cp(){var t=document.getElementById("rp"),m=document.getElementById("cm");t.select();var done=false;try{done=document.execCommand("copy")}catch(e){}
+m.textContent=done?"تم النسخ. الصقه الآن في المحادثة.":"تعذّر النسخ تلقائيًا؛ اضغط داخل الصندوق وانسخ النص يدويًا."}
+intro();
+</script></body></html>
